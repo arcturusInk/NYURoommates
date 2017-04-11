@@ -1,0 +1,30 @@
+#mainContainer{
+	width: 50%;
+	margin: 0 auto;
+}
+
+header{
+	text-decoration: underline;
+	margin-bottom: 7%;
+}
+
+.boundary{
+	margin-top: 15%;
+}
+
+p{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#textBold{
+	font-weight: bold;
+}
+
+button{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 15%;
+}
+
+
