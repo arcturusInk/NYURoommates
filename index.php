@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Login - Signup</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/index-style.css">
   </head>
@@ -18,13 +18,13 @@
 			<div class="form-group">
 				<label for="loginEmail" class="col-sm-2 control-label">NYU Email Address</label>
 				<div class="col-sm-10">
-					<input type="email" class="form-control input-lg" id="loginEmail" placeholder="Email">
+					<input type="email" class="form-control input-lg" name="loginEmail" placeholder="Email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="loginPasswd" class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control input-lg" id="loginPasswd" placeholder="Password">
+					<input type="password" class="form-control input-lg" name="loginPasswd" placeholder="Password">
 				</div>
 			</div>
 			<div class="form-group">
@@ -40,41 +40,43 @@
 			<h3 id="signUpHeader" class="col-sm-offset-2 col-sm-10">Sign Up<h3>
 		</header>
 		<label class="col-sm-offset-2 col-sm-10">
-			<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> I Need A Place 
-		</label>
+			<input type="radio" name="setPlace" id="needPlace"> I Need A Place </label>
 		<label class="col-sm-offset-2 col-sm-10">
-			<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> I Have A Place
-		</label>
+			<input type="radio" name="setPlace" id="havePlace"> I Have A Place </label>
 		<form class="form-horizontal">
 			<div class="form-group">
 				<label for="signUpName" class="col-sm-2 control-label">First Name</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control input-lg" id="signUpName" placeholder="Email">
+					<input type="text" class="form-control input-lg" name="signUpName" placeholder="Email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="signUpEmail" class="col-sm-2 control-label">NYU Email Address</label>
 				<div class="col-sm-10">
-					<input type="email" class="form-control input-lg" id="signUpEmail" placeholder="Email">
+					<input type="email" class="form-control input-lg" name="signUpEmail" placeholder="Email">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="signUpPasswd" class="col-sm-2 control-label">Password</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control input-lg" id="signUpPasswd" placeholder="Password">
+					<input type="password" class="form-control input-lg" name="signUpPasswd" placeholder="Password">
 				</div>
 			</div>
 			<div class="form-group">
 				<label for="reEntSignUpPasswd" class="col-sm-2 control-label">Re-Enter Password</label>
 				<div class="col-sm-10">
-					<input type="password" class="form-control input-lg" id="reEntSignUpPasswd" placeholder="Re-Enter Password">
+					<input type="password" class="form-control input-lg" name="reEntSignUpPasswd" placeholder="Re-Enter Password">
 				</div>
 			</div>
 			<div class="form-group">
 	    		<div class="col-sm-offset-2 col-sm-10">
-	      		<button type="submit" class="btn btn-info btn-lg">Submit!</button>
+	      		<a href="" onclick="directLink()" id="whichProf" type="submit" class="btn btn-info btn-lg">Submit!</a>
+	    		</div>
 	    	</div>
 	    </div>
 	</form>
+
+	<script src="js/index-script.js"></script>
+
   </body>
 </html>
