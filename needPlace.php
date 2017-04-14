@@ -10,10 +10,14 @@
 		</head>
 	<body>
 
+	<header id="profHead">
+		<h3>[USERNAME]'S Profile: I Need A PLace</h3>
+	</header>
+
 		<div id="mainContainer">
 			<form class="form-horizontal">
 
-			<div class = "boundary">
+			<div class = "boundary" id="noBoundary">
 				<header>
 					<h3 id="">Location Preferences<h3>
 				</header>
@@ -96,6 +100,7 @@
 						<select class="form-control" id="" name="">
 						    <option value="">Undergrad</option>
 						    <option value="">Grad</option>
+						    <option value="">No Preference</option>
 						</select> 
 					</div>
 				</div>
@@ -105,24 +110,7 @@
 						<select class="form-control" id="" name="">
 						    <option value="">Female</option>
 						    <option value="">Male</option>
-						</select> 
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="" class="col-sm-2 control-label">Boundaries: </label>
-					<div class="col-sm-10">
-						<select class="form-control" id="" name="">
-						    <option value="">Likes To Share</option>
-						    <option value="">Likes To Be Alone</option>
-						</select> 
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="" class="col-sm-2 control-label">Prefers To Stay: </label>
-					<div class="col-sm-10">
-						<select class="form-control" id="" name="">
-						    <option value="">Out Late At Night</option>
-						    <option value="">In Home At Night</option>
+						    <option value="">No Preference</option>
 						</select> 
 					</div>
 				</div>
@@ -132,10 +120,21 @@
 						<select class="form-control" id="" name="">
 						    <option value="">Sleeps Late (After 12)</option>
 						    <option value="">Sleeps Early (Before 12)</option>
+						    <option value="">No Preference</option>
 						</select> 
 					</div>
 				</div>
-				<p>For The Following, Select What Is Acceptable</p>
+				<div class="form-group">
+					<label for="" class="col-sm-2 control-label">Smoking: </label>
+					<div class="col-sm-10">
+						<select class="form-control" id="" name="">
+						    <option value="">Likes To Smoke</option>
+						    <option value="">Does Not Like To Smoke</option>
+						    <option value="">No Preference</option>
+						</select> 
+					</div>
+				</div>
+				<p>Select What's Acceptable</p>
 				<div class="form-group">
 					<div class="checkbox">
 						<label for="" class="col-sm-2 control-label" id="textBold">Cleanliness: </label>
@@ -143,15 +142,6 @@
 						    <label> <input type="checkbox" name="cleanliness"> Clean </label>
 						    <label> <input type="checkbox" name="cleanliness"> Avg </label>
 						    <label> <input type="checkbox" name="cleanliness"> Messy </label> 
-						</div>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="checkbox">
-						<label for="" class="col-sm-2 control-label" id="textBold" >Likes To: </label>
-						<div class="col-sm-10">
-						    <label> <input type="checkbox" name="likes"> Party </label>
-						    <label> <input type="checkbox" name="likes"> Drink </label>
 						</div>
 					</div>
 				</div>
@@ -176,24 +166,18 @@
 						<select class="form-control" id="" name="">
 						    <option value="">Female</option>
 						    <option value="">Male</option>
+						    <option value="">Other</option>
 						</select> 
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="" class="col-sm-2 control-label">Boundaries: </label>
+					<label for="" class="col-sm-2 control-label">Ethnicity: </label>
 					<div class="col-sm-10">
 						<select class="form-control" id="" name="">
-						    <option value="">Like To Share</option>
-						    <option value="">Like To Be Alone</option>
-						</select> 
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="" class="col-sm-2 control-label">Prefer To Stay: </label>
-					<div class="col-sm-10">
-						<select class="form-control" id="" name="">
-						    <option value="">Out Late At Night</option>
-						    <option value="">In Home At Night</option>
+						    <option value="">Indian</option>
+						    <option value="">Oriental</option>
+						    <option value="">Caucasian</option>
+						    <option value="">Other</option>
 						</select> 
 					</div>
 				</div>
@@ -206,7 +190,16 @@
 						</select> 
 					</div>
 				</div>
-				<p>For The Following, Select What Describes You</p>
+				<div class="form-group">
+					<label for="" class="col-sm-2 control-label">Smoking: </label>
+					<div class="col-sm-10">
+						<select class="form-control" id="" name="">
+						    <option value="">Smoke</option>
+						    <option value="">Do Not Smoke</option>
+						</select> 
+					</div>
+				</div>
+				<p>Select What Describes You</p>
 				<div class="form-group">
 					<div class="checkbox">
 						<label for="" class="col-sm-2 control-label" id="textBold">Cleanliness: </label>
@@ -217,15 +210,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="form-group">
-					<div class="checkbox">
-						<label for="" class="col-sm-2 control-label" id="textBold">Like To: </label>
-						<div class="col-sm-10">
-						    <label> <input type="checkbox" name="likes"> Party </label>
-						    <label> <input type="checkbox" name="likes"> Drink </label>
-						</div>
-					</div>
-				</div>
+				
+
+				<div class = "boundary">
+					<header>
+						<h3 id="">Comments<h3>
+					</header>
+					<p id = "pNoUnder">It is strongly recommended to personalize your profile by describing yourself (such as your habits, hobbies and personality) and what you are looking for in a roommate/place</p>
+					<textarea class="form-control" rows="3" placeholder="Write Something..."></textarea>
 				</div>
 
 				<div class="form-group">
