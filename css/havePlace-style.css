@@ -1,0 +1,51 @@
+#profHead{
+	margin: 2% 0 0 2%;
+}
+
+#mainContainer{
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+
+header{
+	text-decoration: underline;
+	margin-bottom: 7%;
+}
+
+.boundary{
+	margin-top: 15%;
+}
+
+#noBoundary{
+	margin-top: 0%;
+}
+
+p{
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#pNoUnder{
+	text-decoration: none;
+}
+
+.center{
+	text-decoration: none;
+	display:inline-block;
+	margin-left: 55%; 
+}
+
+#moreCen{
+	margin-left: 45%; 
+}
+
+#textBold{
+	font-weight: bold;
+}
+
+button{
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 10%;
+}

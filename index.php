@@ -14,7 +14,7 @@
 		<header>
 			<h3 id="logInHeader" class="col-sm-offset-2 col-sm-10">Log In<h3>
 		</header>
-		<form class="form-horizontal">
+		<form class="form-horizontal"> <!--Puts the label and the input field on the same line!-->
 			<div class="form-group">
 				<label for="loginEmail" class="col-sm-2 control-label">NYU Email Address</label>
 				<div class="col-sm-10">
@@ -39,11 +39,9 @@
 		<header>
 			<h3 id="signUpHeader" class="col-sm-offset-2 col-sm-10">Sign Up<h3>
 		</header>
-		<label class="col-sm-offset-2 col-sm-10">
-			<input type="radio" name="setPlace" id="needPlace"> I Need A Place </label>
-		<label class="col-sm-offset-2 col-sm-10">
-			<input type="radio" name="setPlace" id="havePlace"> I Have A Place </label>
 		<form class="form-horizontal">
+			<label class="col-sm-offset-2 col-sm-10"><input type="radio" name="setPlace" id="needPlace"> I Need A Place </label>
+			<label class="col-sm-offset-2 col-sm-10"><input type="radio" name="setPlace" id="havePlace"> I Have A Place </label>
 			<div class="form-group">
 				<label for="signUpName" class="col-sm-2 control-label">First Name</label>
 				<div class="col-sm-10">
