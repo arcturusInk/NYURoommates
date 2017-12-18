@@ -1,0 +1,37 @@
+#logInCon{/*styling for the log-in portion of the page*/
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align:center;
+	transform: translateY(40%);
+}
+
+#signUpCon{/*styling for the log-in portion of the page*/
+	width: 50%;
+	height: 100%;
+	float: left;
+	text-align:center;
+	border-left: 5px solid #D3D3D3;
+	transform: translateY(10%);
+}
+
+.form-control{
+	width: 60%;
+	margin: auto;
+}
+
+h3{/*styling for the log-in/sign-up headings*/
+	font-size: 30px;
+	text-decoration: underline;
+	font-weight: normal;
+}
+
+#logInHeader{/*styling for the */
+	margin-bottom:50px;
+}
+
+#signUpHeader{/*styling for the */
+	margin-bottom: 35px;
+}
+
+

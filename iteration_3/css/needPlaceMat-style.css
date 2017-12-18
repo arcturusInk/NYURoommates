@@ -1,0 +1,23 @@
+
+#pos{
+	margin-left: 10%;
+	font-size: 18px;
+}
+
+#container{
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 2%;
+}
+
+a{
+	margin-left: 70%;
+}
+
+span{
+	font-weight: bold;
+}
+
+.sep{
+	margin-left: 15%;
+}

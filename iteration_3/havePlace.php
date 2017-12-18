@@ -1,83 +1,3 @@
-<?php 
-	include "include.php"; 
-	
-	if(isset($_REQUEST['havePlaceSubmit'])){
-		//location 
-		$zipcode=$_POST['zipcode'];
-		$timLimPoly=$_POST["timLimPoly"];
-		$subLinePoly=$_POST["subLinePoly"];
-		$timLimWSP=$_POST["timLimWSP"];
-		$subLineWSP=$_POST["subLineWSP"];
-		
-		//Household description
-		$totMem=$_POST["totMem"];
-		$totBed=$_POST["totBed"];
-		$totBath=$_POST["totBath"];
-		$hosDesCom=$_POST["hosDesCom"];
-		
-		//Space details
-		$monFee=$_POST['monFee'];
-		$deposit=$_POST["deposit"];
-		$term=$_POST['term'];
-		$bdrmOcupcy=$_POST['bdrmOcupcy'];
-		$btrmOcupcy=$_POST['btrmOcupcy'];
-		
-		//Roommate Preferences
-		$Rdegree=$_POST['Rdegree'];
-		$Rgender=$_POST['Rgender'];
-		$RsleHab=$_POST["RsleHab"];
-		$Rsmoke=$_POST['Rsmoke'];
-		$Rclean=$_POST['Rclean'];
-		//About Me
-		$Adegree=$_POST['Adegree'];
-		$Agender=$_POST["Agender"];
-		$AsleHab=$_POST['AsleHab'];
-		$Asmoke=$_POST['Asmoke'];
-		$Aclean=$_POST['Aclean'];
-		$comment=$_POST["comments"];
-		//htmlspecialchars: only needed when outputing user-entered data
-	
-
-		//insert the values for location 
-		if ($stmt = $mysqli->prepare("insert into location (pid, zip_code, within_poly, subway_line_poly, within_wsp, subway_line_wsp) values (?,?,?,?,?,?)")) {
-			$stmt->bind_param("iissss", $_SESSION["pid"], $zipcode, $timLimPoly, $subLinePoly, $timLimWSP, $subLineWSP);
-			$stmt->execute();
-			$stmt->close();
-		}	
-		
-		//insert the values for space preferences
-		if ($stmt = $mysqli->prepare("insert into household_des (pid, tot_member, tot_bdrm, tot_bathrm, comments) values (?,?,?,?,?)")) {
-			$stmt->bind_param("issss", $_SESSION["pid"], $totMem, $totBed, $totBath, $hosDesCom);
-			$stmt->execute();
-			$stmt->close();
-		}
-		
-		//insert the values for space details
-		if ($stmt = $mysqli->prepare("insert into space_detail (pid, monthly_fee, deposit, lease_term, bdrm_ocupcy, bathrm_ocupcy) values (?,?,?,?,?,?)")) {
-			$stmt->bind_param("iiisss", $_SESSION["pid"], $monFee, $deposit, $term, $bdrmOcupcy, $btrmOcupcy);
-			$stmt->execute();
-			$stmt->close();
-		}
-		
-		
-		//insert the values for roommate preferences
-		if ($stmt = $mysqli->prepare("insert into roommate_pref (pid, degree, gender, sleeping_habits, smoking, cleanliness) values (?,?,?,?,?,?)")) {
-			$stmt->bind_param("isssss", $_SESSION["pid"], $Rdegree, $Rgender, $RsleHab, $Rsmoke, $Rclean);
-			$stmt->execute();
-			$stmt->close();
-		}
-		
-		//insert the values that are about the user
-		if ($stmt = $mysqli->prepare("insert into person (pid, degree, gender, sleeping_habits, smoking, cleanliness, comments) values (?,?,?,?,?,?,?)")) {
-			$stmt->bind_param("issssss", $_SESSION["pid"], $Adegree, $Agender, $AsleHab, $Asmoke, $Aclean, $comment);
-			$stmt->execute();
-			$stmt->close();
-		}
-		
-		header("Location: http://nyuroommates-com.stackstaging.com/havePlaceMat.php"); 
-	}
-?>
-
 <!doctype html>
 	<html class="no-js" lang="en" dir="ltr">
 		<head>
@@ -90,22 +10,13 @@
 		</head>
 	<body>
 	
-	<?php 
-	if ($stmt = $mysqli->prepare("select first_name from sign_up where pid = ?")) {
-			$stmt->bind_param("i", $_SESSION["pid"]);
-			$stmt->execute();
-			$stmt->bind_result($first_name);
-			if ($stmt->fetch()) { ?>
-				<header id="profHead">
-					<h3><?php echo $first_name; ?>'s Profile: I Have A PLace</h3>
-				</header>
-	<?php
-			}
-		}
-	?>
+
+	<header id="profHead">
+		<h3>[FIRST_NAME]'S Profile For I Have A PLace</h3>
+	</header>
 
 		<div id="mainContainer">
-			<form action="<?php echo $_SERVER['PHP_SELF']; ?>" class="form-horizontal" method="POST">
+			<form class="form-horizontal" action="havePlaceMat.php">
 	
 				<div class = "boundary" id="noBoundary">
 					<header><h3>Location<h3></header>					
@@ -222,7 +133,21 @@
 							</select> 
 						</div>
 					</div>
-					<p id = "pNoUnder">Comments/Caveats About Amenties:</p>
+					<div class="form-group">
+						<div class="checkbox">
+							<label for="amen" class="col-sm-2 control-label" id="textBold">Amenities: </label>
+							<div class="col-sm-10">
+							    <label> <input type="checkbox" name="amen"> Air Conditioning </label>
+							    <label> <input type="checkbox" name="amen"> Dishwasher </label>
+							    <label> <input type="checkbox" name="amen"> Laundry Facility </label>
+							    <label> <input type="checkbox" name="amen"> Elevator </label>
+							    <label> <input type="checkbox" name="amen"> High Speed Internet </label>
+							    <label> <input type="checkbox" name="amen"> Storage </label>
+							    <label> <input type="checkbox" name="amen"> Washer/Dryer </label>
+							</div>
+						</div>
+					</div>
+					<p id = "pNoUnder">Comments/Caveats About The Amenties Listed Above:</p>
 					<div class="form-group">
 						<textarea class="form-control" name="hosDesCom" rows="3" placeholder="Write Something..."></textarea>
 					</div>
@@ -258,6 +183,17 @@
 							    <option>9 Month Or Less</option>
 							    <option>Month To Month</option>
 							</select> 
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="checkbox">
+							<label for="util" class="col-sm-2 control-label" id="textBold">Utilities: </label>
+							<div class="col-sm-10">
+							    <label> <input type="checkbox" name="util"> Electricity </label>
+							    <label> <input type="checkbox" name="util"> Gas </label>
+							    <label> <input type="checkbox" name="util"> Water </label>
+							    <label> <input type="checkbox" name="util"> Trash Pickup </label> 
+							</div>
 						</div>
 					</div>
 					<div class="form-group">
@@ -327,9 +263,9 @@
 						<div class="checkbox">
 							<label for="Rclean" class="col-sm-2 control-label" id="textBold">Cleanliness: </label>
 							<div class="col-sm-10">
-							    <label class="radio-inline"> <input type="radio" name="Rclean" value="Clean"> Clean </label>
-							    <label class="radio-inline"> <input type="radio" name="Rclean" value="Avg"> Avg </label>
-							    <label class="radio-inline"> <input type="radio" name="Rclean" value="Messy"> Messy </label> 
+							    <label> <input type="checkbox" name="Rclean"> Clean </label>
+							    <label> <input type="checkbox" name="Rclean"> Avg </label>
+							    <label> <input type="checkbox" name="Rclean"> Messy </label> 
 							</div>
 						</div>
 					</div>

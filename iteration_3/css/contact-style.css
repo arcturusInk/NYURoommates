@@ -1,0 +1,12 @@
+#wrap{
+  display: flex;
+  height: 300px;
+}
+
+textarea{
+  flex: 1; /* consume available width */
+}
+
+input {
+  align-self: flex-start; /* override flex full-height columns feature */
+}

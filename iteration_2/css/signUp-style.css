@@ -1,0 +1,28 @@
+#signUpCon{/*styling for the log-in portion of the page*/
+	width: 50%;
+	text-align:center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-top:-280px; 
+    margin-left:-360px;
+}
+
+#dist{
+	margin-bottom: 3%;
+}
+
+.form-control{
+	width: 60%;
+	margin: auto;
+}
+
+h3{/*styling for the log-in/sign-up headings*/
+	font-size: 30px;
+	text-decoration: underline;
+	font-weight: normal;
+}
+
+#signUpHeader{/*styling for the */
+	margin-bottom: 5%;
+}
